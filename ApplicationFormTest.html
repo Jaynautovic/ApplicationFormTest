@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>BMD Systemhaus GesmbH - Online-Bewerbung</title>
+        <link rel="icon" href="https://www.aevo.at/wp-content/uploads/2018/01/bmdlogo-02.png">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <script src="js/bootstrap.js"></script>
+        <script src="//unpkg.com/jquery@3.4.1/dist/jquery.min.js"></script>
+        <script src="//unpkg.com/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+        <script src="//unpkg.com/bootstrap-select@1.12.4/dist/js/bootstrap-select.min.js"></script>
+        <script src="//unpkg.com/bootstrap-select-country@4.0.0/dist/js/bootstrap-select-country.min.js"></script>
+
+
+    </head>
+    <body>
+        <header class="w-auto border-bottom pb-4 border-5 border-danger">
+            <img class="img-fluid" src="https://bmdweb.bmd.at/bmdonlbew/bmdweb2.dll/files/bmdonlbew20logo.png">
+        </header>
+        <main>
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-header mb-3">
+                        Wir freuen uns, dass Sie Teil des BMD-Teams werden wollen!
+                    </div>
+                    Mit Ihrer Bewerbung wollen wir Sie kennenlernen und herausfinden, wie Sie mit Ihren Qualifikationen und Ihrer Persönlichkeit das BMD-Team optimal ergänzen.
+                    Ihren Lebenslauf, Ihr Bewerbungsschreiben und weitere Dokumente können Sie als PDF, JPG oder Word-Dokument hochladen. Sollten Sie Probleme beim Hochladen der Dokumente haben, können Sie diese auch per Mail an jobs@bmd.at senden.
+                    Die Vertraulichkeit und der Schutz Ihrer Daten haben für uns oberste Priorität. Alle Informationen dazu können Sie in der Datenschutzerklärung nachlesen.
+                </div>
+            </div>
+            <div class="row pt-3">
+                <div class="col-1 col-md-2 col-lg-3 col-xl-4">
+
+                </div>
+                <form class="col-10 col-md-8 col-lg-6 col-xl-4 mb-3 needs-validation" novalidate>
+                    <div class="pb-3 col-12">
+                        <label for="firstNameInput" class="form-label">
+                            Vorname*
+                        </label>
+                        <input type="text" class="form-control" id="firstNameInput" aria-describedby="firstNameHelp" required>
+                    </div>
+
+                    <div class="pb-3">
+                        <label for="lastNameInput" class="form-label">
+                            Nachname*
+                        </label>
+                        <input type="text" class="form-control" id="lastNameInput" aria-describedby="lastNameHelp" required>
+                    </div>
+
+                    <div class="pb-3">
+                        <label for="headTitleInput" class="form-label">
+                            Titel
+                        </label>
+                        <input type="text" class="form-control" id="headTitleInput" aria-describedby="headTitleHelp">
+                    </div>
+
+                    <div class="pb-3">
+                        <label for="tailTitleInput" class="form-label">
+                            Titel hinten
+                        </label>
+                        <input type="text" class="form-control" id="tailTitleInput" aria-describedby="tailTitleHelp">
+                    </div>
+
+                    <div class="pb-3">
+                        <label for="genderSelect" class="form-label">
+                            Geschlecht
+                        </label>
+                        <select id="genderSelect" class="form-select" aria-label="Gender Selector">
+                            <option value="" selected disabled>Bitte auswählen</option>
+                            <option value="1">männlich</option>
+                            <option value="2">weiblich</option>
+                            <option value="3">divers</option>
+                            <option value="4">Keine Angabe</option>
+                        </select>
+                    </div>
+
+                    <div class="pb-3">
+                        <label for="birthDateSelect" class="form-label">
+                            Geburtsdatum*
+                        </label>
+                        <input type="date" class="form-control" id="birthDateSelect" aria-describedby="birthDateHelp" required>
+                    </div>
+
+                    <div class="pb-3">
+                        <label for="birthPlaceInput" class="form-label">
+                            Geburtsort
+                        </label>
+                        <input type="text" class="form-control" id="birthPlaceInput" aria-describedby="birthPlaceHelp">
+                    </div>
+
+                    <div class="pb-3">
+                        <label for="streetInput" class="form-label">
+                            Straße*
+                        </label>
+                        <input type="text" class="form-control" id="streetInput" aria-describedby="streetHelp">
+                    </div>
+
+                    <div class="pb-3">
+                        <label for="postalCodeInput" class="form-label">
+                            PLZ*
+                        </label>
+                        <input type="" class="form-control" id="postalCodeInput" maxlength="4" aria-describedby="postalCodeHelp">
+                    </div>
+
+                    <div class="pb-3">
+                        <label for="townInput" class="form-label">
+                            Ort*
+                        </label>
+                        <input type="text" class="form-control" id="townInput" aria-describedby="townHelp">
+                    </div>
+
+                    <div class="pb-3">
+                        <label for="countrySelect" class="form-label">
+                            Land*
+                        </label>
+                        <select id="countrySelect" class="form-select countrypicker" a required></select>
+                    </div>
+
+                    <div class="pb-3">
+                        <label for="phoneNumberInput" class="form-label">
+                            Telefonnummer*
+                        </label>
+                        <input type="tel" class="form-control" id="phoneNumberInput" aria-describedby="phoneNumberHelp" required>
+                    </div>
+
+                    <div class="pb-3">
+                        <label for="mailInput" class="form-label">
+                            E-Mail*
+                        </label>
+                        <input type="email" class="form-control" id="mailInput" aria-describedby="mailHelp">
+                    </div>
+
+                    <div class="pb-3">
+                        <label for="photoInput" class="form-label">
+                            Foto*
+                        </label>
+                        <input type="file" class="form-control" id="photoInput" aria-describedby="photoHelp" required>
+                    </div>
+
+                    <div class="pb-3">
+                        <label for="cVUpload" class="form-label">
+                            Lebenslauf*
+                        </label>
+                        <input type="file" class="form-control" id="cVUpload" aria-describedby="cVHelp" required>
+                    </div>
+
+                    <div class="pb-3">
+                        <label for="applicationUpload" class="form-label">
+                            Bewerbungsschreiben*
+                        </label>
+                        <input type="file" class="form-control" id="applicationUpload" aria-describedby="applicationUploadHelp" required>
+                    </div>
+
+                    <div class="pb-3">
+                        <label for="additionalDocumentsUpload" class="form-label">
+                            Zusätzliche Dokumente
+                        </label>
+                        <input type="file" class="form-control" id="additionalDocumentsUpload" aria-describedby="additionalDocumentsUploadHelp" multiple>
+                    </div>
+
+
+                    <div class="d-flex justify-content-around">
+                        <button type="submit" class="btn btn-primary">Absenden</button>
+                        <button type="reset" class="btn btn-primary">Reset</button>
+                    </div>
+                </form>
+                <div class="col-1 col-md-2 col-lg-3 col-xl-4">
+
+                </div>
+            </div>
+
+        </main>
+
+        <script>
+            $('.countrypicker').countrypicker();
+        </script>
+
+    </body>
+</html>
