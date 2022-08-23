@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>BMD Systemhaus GesmbH - Online-Bewerbung</title>
+
+        <link rel="icon" href="https://www.aevo.at/wp-content/uploads/2018/01/bmdlogo-02.png">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css" rel="stylesheet">
+
+        <script src="js/bootstrap.js"></script>
+        
+
+        <!-- bootstrap 5.x or 4.x is supported. You can also use the bootstrap css 3.3.x versions -->
+        <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" crossorigin="anonymous">-->
+
+        <!-- default icons used in the plugin are from Bootstrap 5.x icon library (which can be enabled by loading CSS below) -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.min.css" crossorigin="anonymous">
+
+        <!-- alternatively you can use the font awesome icon library if using with `fas` theme (or Bootstrap 4.x) by uncommenting below. -->
+        <!-- link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" crossorigin="anonymous" -->
+
+        <!-- the fileinput plugin styling CSS file -->
+        <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+
+        <!-- if using RTL (Right-To-Left) orientation, load the RTL CSS file after fileinput.css by uncommenting below -->
+        <!-- link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/css/fileinput-rtl.min.css" media="all" rel="stylesheet" type="text/css" /-->
+
+        <!-- the jQuery Library -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+
+        <!-- buffer.min.js and filetype.min.js are necessary in the order listed for advanced mime type parsing and more correct
+             preview. This is a feature available since v5.5.0 and is needed if you want to ensure file mime type is parsed
+             correctly even if the local file's extension is named incorrectly. This will ensure more correct preview of the
+             selected file (note: this will involve a small processing overhead in scanning of file contents locally). If you
+             do not load these scripts then the mime type parsing will largely be derived using the extension in the filename
+             and some basic file content parsing signatures. -->
+        <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/plugins/buffer.min.js" type="text/javascript"></script>
+        <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/plugins/filetype.min.js" type="text/javascript"></script>
+
+        <!-- piexif.min.js is needed for auto orienting image files OR when restoring exif data in resized images and when you
+            wish to resize images before upload. This must be loaded before fileinput.min.js -->
+        <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/plugins/piexif.min.js" type="text/javascript"></script>
+
+        <!-- sortable.min.js is only needed if you wish to sort / rearrange files in initial preview.
+            This must be loaded before fileinput.min.js -->
+        <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/plugins/sortable.min.js" type="text/javascript"></script>
+
+        <!-- bootstrap.bundle.min.js below is needed if you wish to zoom and preview file content in a detail modal
+            dialog. bootstrap 5.x or 4.x is supported. You can also use the bootstrap js 3.3.x versions. -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+        <!-- the main fileinput plugin script JS file -->
+        <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/fileinput.min.js"></script>
+
+        <!-- following theme script is needed to use the Font Awesome 5.x theme (`fa5`). Uncomment if needed. -->
+        <!-- script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/themes/fa5/theme.min.js"></script -->
+
+        <!-- optionally if you need translation for your language then include the locale file as mentioned below (replace LANG.js with your language locale) -->
+        <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/locales/LANG.js"></script>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+        <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+        <link rel="stylesheet" href="css/bootstrap-multiselect.css"/>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+    </head>
+
+    <body>
+        
+        <header class="w-auto pb-4">
+            <img class="img-fluid mb-2 ms-2 mt-2" src="https://www.bmd.com/fileadmin/media/logos/bmd-logo-2.png">
+            <div class="fs-6 bg-transparent shadow p-3 text-center border-top border-5 border-primary">
+                <div class="fs-3 fw-bold text-primary">Wir freuen uns, dass Sie Teil des BMD-Teams werden wollen!</div><br>
+                Mit Ihrer Bewerbung wollen wir Sie kennenlernen und herausfinden, wie Sie mit Ihren Qualifikationen und Ihrer Persönlichkeit das BMD-Team optimal ergänzen.<br>
+                Sollten Sie Probleme beim Hochladen der Dokumente haben, können Sie diese auch per Mail an <a class="text-primary" href="mailto:jobs@bmd.at">jobs@bmd.at</a> senden.<br>
+            </div>
+        </header>
+
+        <main>
+
+            <div class="row py-3 m-0">
+
+                <div class="col-1 col-sm-1 col-md-2 col-lg-2 col-xl-1 col-xxl-1 p-0"></div>
+
+                <form class="card col-10 col-sm-10 col-md-8 col-lg-8 col-xl-10 col-xxl-10 p-3 needs-validation" id="cardClass" novalidate>
+
+                    <div class="row">
+
+                        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 col-xxl-5">
+
+                            <div class="py-3 px-3 pe-xl-0">
+                                <label for="firstNameInput" class="form-label">
+                                    Vorname*
+                                </label>
+                                <input type="text" class="form-control" id="firstNameInput" pattern="[A-Za-zÄ-Üä-üâá-/]{1,}" placeholder="Max" maxlength="30" aria-describedby="firstNameHelp"required>
+                                <div class="invalid-feedback">Bitte geben Sie ihren Vornamen an!</div>
+                            </div>
+        
+                            <div class="pb-3 px-3 pe-xl-0">
+                                <label for="lastNameInput" class="form-label">
+                                    Nachname*
+                                </label>
+                                <input type="text" class="form-control" id="lastNameInput" pattern="[A-Za-zÄ-Üä-üâá-/]{1,}" placeholder="Mustermann" maxlength="25" aria-describedby="lastNameHelp" format required>
+                                <div class="invalid-feedback">Bitte geben Sie ihren Nachnamen an!</div>
+                            </div>
+
+                            <div class="pb-3 px-3 pe-xl-0">
+                                <label for="formOfAdress" class="form-label">
+                                    Persönliche Anrede*
+                                </label>
+                                <select id="formOfAdress" class="form-select" required>
+                                    <option value="" selected disabled>Bitte auswählen</option>
+                                    <option value="Frau">Frau</option>
+                                    <option value="Herr">Herr</option>
+                                    <option value="Selbstdefiniert">Selbstdefiniert</option>
+                                </select>
+                                <div class="invalid-feedback">Bitte wählen Sie ihre gewünschte Anrede aus!</div>
+                            </div>
+
+                            <div class="pb-3 px-3 pe-xl-0 visually-hidden" id="selfdefinedFormOfAdress">
+                                <label for="chosenAdressInput" class="form-label">
+                                    Selbstdefinierte Anrede*
+                                </label>
+                                <input type="text" class="form-control" id="chosenAdressInput" placeholder="Muster Anrede" tabindex="-1" required>
+                                <div class="invalid-feedback">Bitte wählen Sie ihre präferierte Anrede!</div>
+                            </div>
+
+        
+                            <div class="pb-3 px-3 pe-xl-0 form-group">
+                                <label for="birthDatePicker" class="form-label">
+                                    Geburtsdatum*
+                                </label>
+                                <input type="date" class="form-control" id="birthDatepicker" name="birthDatepicker" placeholder="" required/>
+                                <div class="invalid-feedback">Bitte wählen Sie ihr Geburtsdatum aus!</div>
+                            </div>
+
+                            <div class="px-3 pe-xl-0">
+                                <label class="form-label" for="myMultiselect">Weitere Stellenangebote*</label>
+                                <div id="myMultiselect" class="multiselect">
+                                  <div id="mySelectLabel" class="selectBox" onclick="toggleCheckboxArea()">
+                                    <select class="form-select" required>
+                                      <option>somevalue</option>
+                                    </select>
+                                    <div class="overSelect:form-control"></div>
+                                  </div>
+                                  <div id="mySelectOptions">
+                                    <label for="one"><input type="checkbox" id="one" onchange="checkboxStatusChange()" value="Mitarbeiter*in HR Management" checked /> Mitarbeiter*in HR Management</label>
+                                    <label for="two"><input type="checkbox" id="two" onchange="checkboxStatusChange()" value="Mobile App Developer" /> Mobile App Developer</label>
+                                    <label for="three"><input type="checkbox" id="three" onchange="checkboxStatusChange()" value="Mitarbeiter*in für Auftrags- und Terminkoodination" /> Mitarbeiter*in für Auftrags- und Terminkoodination</label>
+                                    <label for="four"><input type="checkbox" id="four" onchange="checkboxStatusChange()" value="Software Consultant für Kanzleiorganisation und Honorarverrechnung" /> Software Consultant für Kanzleiorganisation und Honorarverrechnung</label>
+                                    <label for="five"><input type="checkbox" id="five" onchange="checkboxStatusChange()" value="(Junior-) Counsultant Finanzbuchhaltung" /> (Junior-) Counsultant Finanzbuchhaltung</label>
+                                    <label for="six"><input type="checkbox" id="six" onchange="checkboxStatusChange()" value="Consultant Projektplanung und Leistungserfassung" /> Consultant Projektplanung und Leistungserfassung</label>
+                                    <label for="seven"><input type="checkbox" id="seven" onchange="checkboxStatusChange()" value="ERP-Software Developer" /> ERP-Software Developer</label>
+                                    <label for="eight"><input type="checkbox" id="eight" onchange="checkboxStatusChange()" value="Consultant für Zeiterfassungs-Software" /> Consultant für Zeiterfassungs-Software</label>
+                                    <label for="nine"><input type="checkbox" id="nine" onchange="checkboxStatusChange()" value="ERP Consultant für Warenwirtschaftssysteme" /> ERP Consultant für Warenwirtschaftssysteme</label>
+                                    <label for="ten"><input type="checkbox" id="ten" onchange="checkboxStatusChange()" value="ERP Consultant - Support Warenwirtschaft" /> ERP Consultant - Support Warenwirtschaft</label>
+                                    <label for="ten"><input type="checkbox" id="ten" onchange="checkboxStatusChange()" value="Consultant Rechnungswesen mit Schwerpunkt Bilanzbuchhaltung" /> Consultant Rechnungswesen mit Schwerpunkt Bilanzbuchhaltung</label>
+                                    <label for="ten"><input type="checkbox" id="ten" onchange="checkboxStatusChange()" value="Consultant Finanzbuchhaltung für Steuerberatungskanzleien" /> Consultant Finanzbuchhaltung für Steuerberatungskanzleien</label>
+                                    <label for="ten"><input type="checkbox" id="ten" onchange="checkboxStatusChange()" value="Consultant CRM mit Schwerpunkt Leistungserfassung und -abrechnung" /> Consultant CRM mit Schwerpunkt Leistungserfassung und -abrechnung</label>
+                                    <label for="ten"><input type="checkbox" id="ten" onchange="checkboxStatusChange()" value="Inhouse Consultant mit Steuerberatungserfahrung" /> Inhouse Consultant mit Steuerberatungserfahrung</label>
+                                    <label for="ten"><input type="checkbox" id="ten" onchange="checkboxStatusChange()" value="Mitarbeiter*in Verkaufsinnendienst" /> Mitarbeiter*in Verkaufsinnendienst</label>
+                                    <label for="ten"><input type="checkbox" id="ten" onchange="checkboxStatusChange()" value="Junior Softwareentwickler" /> Junior Softwareentwickler</label>
+                                    <label for="ten"><input type="checkbox" id="ten" onchange="checkboxStatusChange()" value="Junior Softwareentwickler für Warenwirtschaftssysteme" /> Junior Softwareentwickler für Warenwirtschaftssysteme</label>
+                                    <label for="ten"><input type="checkbox" id="ten" onchange="checkboxStatusChange()" value="Consultant mit Schwerpunkt Rechnungswesen" /> Consultant mit Schwerpunkt Rechnungswesen</label>
+                                </div>
+                                </div>
+                              </div>
+
+
+                        </div>
+
+                        <div class="col col-1 col-sm-2 col-md-2 col-lg-3 col-xl-2 col-xxl-2 p-0"></div>
+
+                        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 col-xxl-5 mt-4 mt-xl-0 needs-validation" novalidate>
+                            
+                            <div class="py-3 px-3 ps-xl-0">
+                                <label for="countrySelect" class="form-label">
+                                    Land*
+                                </label>
+                                <select id="countrySelect" name="countrySelect" class="form-select" required>
+                                    <option value="" selected disabled>-- Unsere Standorte --</option>
+                                    <option value="+43" data-countryCode="+AT">Österreich</option>
+                                    <option value="+49" data-countryCode="DE">Deutschland</option>
+                                    <option value="+41" data-countryCode="CH">Schweiz</option>
+                                    <option value="+36" data-countryCode="HU">Ungarn</option>
+                                    <option value="+421" data-countryCode="SK">Slowakei</option>
+                                    <option value="+42" data-countryCode="CZ">Tschechien</option>
+                                    <option disabled>-- Weitere Länder --</option>
+                                    <option value="+93" data-countryCode="AF">Afghanistan</option>
+                                    <option value="+20" data-countryCode="EG">Ägypten</option>
+                                    <option value="+358" data-countryCode="AX">Åland</option>
+                                    <option value="+355" data-countryCode="AL">Albanien</option>
+                                    <option value="+213" data-countryCode="DZ">Algerien</option>
+                                    <option value="+1" data-countryCode="AS">Amerikanisch-Samoa</option>
+                                    <option value="+1" data-countryCode="VI">Amerikanische Jungferninseln</option>
+                                    <option value="+376" data-countryCode="AD">Andorra</option>
+                                    <option value="+244" data-countryCode="AO">Angola</option>
+                                    <option value="+1" data-countryCode="AI">Anguilla</option>
+                                    <option value="+6271" data-countryCode="AQ">Antarktis</option>
+                                    <option value="+1" data-countryCode="AG">Antigua und Barbuda</option>
+                                    <option value="+240" data-countryCode="GQ">Äquatorialguinea</option>
+                                    <option value="+54" data-countryCode="AR">Argentinien</option>
+                                    <option value="+374" data-countryCode="AM">Armenien</option>
+                                    <option value="+297" data-countryCode="AW">Aruba</option>
+                                    <option value="+247" data-countryCode="AC">Ascension</option>
+                                    <option value="+994" data-countryCode="AZ">Aserbaidschan</option>
+                                    <option value="+251" data-countryCode="ET">Äthiopien</option>
+                                    <option value="+61" data-countryCode="AU">Australien</option>
+                                    <option value="+1" data-countryCode="BS">Bahamas</option>
+                                    <option value="+973" data-countryCode="BH">Bahrain</option>
+                                    <option value="+880" data-countryCode="BD">Bangladesch</option>
+                                    <option value="+1" data-countryCode="BB">Barbados</option>
+                                    <option value="+375" data-countryCode="BY">Belarus (Weißrussland)</option>
+                                    <option value="+32" data-countryCode="BE">Belgien</option>
+                                    <option value="+501" data-countryCode="BZ">Belize</option>
+                                    <option value="+229" data-countryCode="BJ">Benin</option>
+                                    <option value="+1" data-countryCode="BM">Bermuda</option>
+                                    <option value="+975" data-countryCode="BT">Bhutan</option>
+                                    <option value="+591" data-countryCode="BO">Bolivien</option>
+                                    <option value="+387" data-countryCode="BA">Bosnien und Herzegowina</option>
+                                    <option value="+267" data-countryCode="BW">Botswana</option>
+                                    <option value="" data-countryCode="BV">Bouvetinsel</option>
+                                    <option value="+55" data-countryCode="BR">Brasilien</option>
+                                    <option value="" data-countryCode="VG">Britische Jungferninseln</option>
+                                    <option value="" data-countryCode="IO">Britisches Territorium im Indischen Ozean</option>
+                                    <option value="+673" data-countryCode="BN">Brunei Darussalam</option>
+                                    <option value="+359" data-countryCode="BG">Bulgarien</option>
+                                    <option value="+226" data-countryCode="BF">Burkina Faso</option>
+                                    <option value="+257" data-countryCode="BI">Burundi</option>
+                                    <option value="" data-countryCode="EA">Ceuta, Melilla</option>
+                                    <option value="+56" data-countryCode="CL">Chile</option>
+                                    <option value="+86" data-countryCode="CN">Volksrepublik China</option>
+                                    <option value="" data-countryCode="CP">Clipperton</option>
+                                    <option value="+682" data-countryCode="CK">Cookinseln</option>
+                                    <option value="+506" data-countryCode="CR">Costa Rica</option>
+                                    <option value="+225" data-countryCode="CI">Côte d'Ivoire (Elfenbeinküste)</option>
+                                    <option value="+45" data-countryCode="DK">Dänemark</option>
+                                    <option value="+49" data-countryCode="DE">Deutschland</option>
+                                    <option value="" data-countryCode="DG">Diego Garcia</option>
+                                    <option value="+1" data-countryCode="DM">Dominica</option>
+                                    <option value="+1" data-countryCode="DO">Dominikanische Republik</option>
+                                    <option value="+253" data-countryCode="DJ">Dschibuti</option>
+                                    <option value="+593" data-countryCode="EC">Ecuador</option>
+                                    <option value="+503" data-countryCode="SV">El Salvador</option>
+                                    <option value="+291" data-countryCode="ER">Eritrea</option>
+                                    <option value="+372" data-countryCode="EE">Estland</option>
+                                    <option value="+500" data-countryCode="FK">Falklandinseln</option>
+                                    <option value="+298" data-countryCode="FO">Färöer</option>
+                                    <option value="+679" data-countryCode="FJ">Fidschi</option>
+                                    <option value="+358" data-countryCode="FI">Finnland</option>
+                                    <option value="+33" data-countryCode="FR">Frankreich</option>
+                                    <option value="+594" data-countryCode="GF">Französisch-Guayana</option>
+                                    <option value="+689" data-countryCode="PF">Französisch-Polynesien</option>
+                                    <option value="+241" data-countryCode="GA">Gabun</option>
+                                    <option value="+220" data-countryCode="GM">Gambia</option>
+                                    <option value="+995" data-countryCode="GE">Georgien</option>
+                                    <option value="+233" data-countryCode="GH">Ghana</option>
+                                    <option value="+350" data-countryCode="GI">Gibraltar</option>
+                                    <option value="+1" data-countryCode="GD">Grenada</option>
+                                    <option value="+30" data-countryCode="GR">Griechenland</option>
+                                    <option value="+299" data-countryCode="GL">Grönland</option>
+                                    <option value="+44" data-countryCode="GB">Großbritannien</option>
+                                    <option value="+590" data-countryCode="GP">Guadeloupe</option>
+                                    <option value="+1" data-countryCode="GU">Guam</option>
+                                    <option value="+502" data-countryCode="GT">Guatemala</option>
+                                    <option value="" data-countryCode="GG">Guernsey (Kanalinsel)</option>
+                                    <option value="+224" data-countryCode="GN">Guinea</option>
+                                    <option value="+245" data-countryCode="GW">Guinea-Bissau</option>
+                                    <option value="+592" data-countryCode="GY">Guyana</option>
+                                    <option value="+509" data-countryCode="HT">Haiti</option>
+                                    <option value="" data-countryCode="HM">Heard- und McDonald-Inseln</option>
+                                    <option value="+504" data-countryCode="HN">Honduras</option>
+                                    <option value="+852" data-countryCode="HK">Hongkong</option>
+                                    <option value="+91" data-countryCode="IN">Indien</option>
+                                    <option value="+62" data-countryCode="ID">Indonesien</option>
+                                    <option value="+44" data-countryCode="IM">Insel Man</option>
+                                    <option value="+964" data-countryCode="IQ">Irak</option>
+                                    <option value="+98" data-countryCode="IR">Iran</option>
+                                    <option value="+353" data-countryCode="IE">Irland</option>
+                                    <option value="+354" data-countryCode="IS">Island</option>
+                                    <option value="+972" data-countryCode="IL">Israel</option>
+                                    <option value="+39" data-countryCode="IT">Italien</option>
+                                    <option value="+1" data-countryCode="JM">Jamaika</option>
+                                    <option value="+81" data-countryCode="JP">Japan</option>
+                                    <option value="+967" data-countryCode="YE">Jemen</option>
+                                    <option value="" data-countryCode="JE">Jersey (Kanalinsel)</option>
+                                    <option value="+962" data-countryCode="JO">Jordanien</option>
+                                    <option value="+1" data-countryCode="KY">Kaimaninseln</option>
+                                    <option value="+855" data-countryCode="KH">Kambodscha</option>
+                                    <option value="+237" data-countryCode="CM">Kamerun</option>
+                                    <option value="+1" data-countryCode="CA">Kanada</option>
+                                    <option value="" data-countryCode="IC">Kanarische Inseln</option>
+                                    <option value="+238" data-countryCode="CV">Kap Verde</option>
+                                    <option value="+7" data-countryCode="KZ">Kasachstan</option>
+                                    <option value="+974" data-countryCode="QA">Katar</option>
+                                    <option value="+254" data-countryCode="KE">Kenia</option>
+                                    <option value="+996" data-countryCode="KG">Kirgisistan</option>
+                                    <option value="+686" data-countryCode="KI">Kiribati</option>
+                                    <option value="+61" data-countryCode="CC">Kokosinseln</option>
+                                    <option value="+57" data-countryCode="CO">Kolumbien</option>
+                                    <option value="+269" data-countryCode="KM">Komoren</option>
+                                    <option value="+243" data-countryCode="CD">Demokratische Republik Kongo</option>
+                                    <option value="+850" data-countryCode="KP">Demokratische Volksrepublik Korea (Nordkorea)</option>
+                                    <option value="+82" data-countryCode="KR">Republik Korea (Südkorea)</option>
+                                    <option value="+385" data-countryCode="HR">Kroatien</option>
+                                    <option value="+53" data-countryCode="CU">Kuba</option>
+                                    <option value="+965" data-countryCode="KW">Kuwait</option>
+                                    <option value="+856" data-countryCode="LA">Laos</option>
+                                    <option value="+266" data-countryCode="LS">Lesotho</option>
+                                    <option value="+371" data-countryCode="LV">Lettland</option>
+                                    <option value="+961" data-countryCode="LB">Libanon</option>
+                                    <option value="+231" data-countryCode="LR">Liberia</option>
+                                    <option value="+218" data-countryCode="LY">Libyen</option>
+                                    <option value="+423" data-countryCode="LI">Liechtenstein</option>
+                                    <option value="+370" data-countryCode="LT">Litauen</option>
+                                    <option value="+352" data-countryCode="LU">Luxemburg</option>
+                                    <option value="+853" data-countryCode="MO">Macao</option>
+                                    <option value="+261" data-countryCode="MG">Madagaskar</option>
+                                    <option value="+265" data-countryCode="MW">Malawi</option>
+                                    <option value="+60" data-countryCode="MY">Malaysia</option>
+                                    <option value="+960" data-countryCode="MV">Malediven</option>
+                                    <option value="+223" data-countryCode="ML">Mali</option>
+                                    <option value="+356" data-countryCode="MT">Malta</option>
+                                    <option value="+212" data-countryCode="MA">Marokko</option>
+                                    <option value="+692" data-countryCode="MH">Marshallinseln</option>
+                                    <option value="+596" data-countryCode="MQ">Martinique</option>
+                                    <option value="+222" data-countryCode="MR">Mauretanien</option>
+                                    <option value="+230" data-countryCode="MU">Mauritius</option>
+                                    <option value="+262" data-countryCode="YT">Mayotte</option>
+                                    <option value="+389" data-countryCode="MK">Mazedonien</option>
+                                    <option value="+52" data-countryCode="MX">Mexiko</option>
+                                    <option value="+691" data-countryCode="FM">Mikronesien</option>
+                                    <option value="+373" data-countryCode="MD">Moldawien (Republik Moldau)</option>
+                                    <option value="+377" data-countryCode="MC">Monaco</option>
+                                    <option value="+976" data-countryCode="MN">Mongolei</option>
+                                    <option value="+382" data-countryCode="ME">Montenegro</option>
+                                    <option value="+1" data-countryCode="MS">Montserrat</option>
+                                    <option value="+258" data-countryCode="MZ">Mosambik</option>
+                                    <option value="+95" data-countryCode="MM">Myanmar (Burma)</option>
+                                    <option value="+264" data-countryCode="NA">Namibia</option>
+                                    <option value="+674" data-countryCode="NR">Nauru</option>
+                                    <option value="+977" data-countryCode="NP">Nepal</option>
+                                    <option value="+687" data-countryCode="NC">Neukaledonien</option>
+                                    <option value="+64" data-countryCode="NZ">Neuseeland</option>
+                                    <option value="+505" data-countryCode="NI">Nicaragua</option>
+                                    <option value="+31" data-countryCode="NL">Niederlande</option>
+                                    <option value="" data-countryCode="AN">Niederländische Antillen</option>
+                                    <option value="+227" data-countryCode="NE">Niger</option>
+                                    <option value="+234" data-countryCode="NG">Nigeria</option>
+                                    <option value="+683" data-countryCode="NU">Niue</option>
+                                    <option value="" data-countryCode="MP">Nördliche Marianen</option>
+                                    <option value="+6723" data-countryCode="NF">Norfolkinsel</option>
+                                    <option value="+47" data-countryCode="NO">Norwegen</option>
+                                    <option value="+968" data-countryCode="OM">Oman</option>
+                                    <option value="" data-countryCode="XO">Orbit</option>
+                                    <option value="+43" data-countryCode="+AT">Österreich</option>
+                                    <option value="+670" data-countryCode="TL">Osttimor (Timor-Leste)</option>
+                                    <option value="+92" data-countryCode="PK">Pakistan</option>
+                                    <option value="+970" data-countryCode="PS">Palästinensische Autonomiegebiete</option>
+                                    <option value="+680" data-countryCode="PW">Palau</option>
+                                    <option value="+507" data-countryCode="PA">Panama</option>
+                                    <option value="+675" data-countryCode="PG">Papua-Neuguinea</option>
+                                    <option value="+595" data-countryCode="PY">Paraguay</option>
+                                    <option value="+51" data-countryCode="PE">Peru</option>
+                                    <option value="+63" data-countryCode="PH">Philippinen</option>
+                                    <option value="+649" data-countryCode="PN">Pitcairninseln</option>
+                                    <option value="+48" data-countryCode="PL">Polen</option>
+                                    <option value="+351" data-countryCode="PT">Portugal</option>
+                                    <option value="+1" data-countryCode="PR">Puerto Rico</option>
+                                    <option value="+886" data-countryCode="TW">Republik China (Taiwan)</option>
+                                    <option value="+242" data-countryCode="CG">Republik Kongo</option>
+                                    <option value="+262" data-countryCode="RE">Réunion</option>
+                                    <option value="+250" data-countryCode="RW">Ruanda</option>
+                                    <option value="+40" data-countryCode="RO">Rumänien</option>
+                                    <option value="+7" data-countryCode="RU">Russische Föderation</option>
+                                    <option value="" data-countryCode="BL">Saint-Barthélemy</option>
+                                    <option value="" data-countryCode="MF">Saint-Martin</option>
+                                    <option value="+677" data-countryCode="SB">Salomonen</option>
+                                    <option value="+260" data-countryCode="ZM">Sambia</option>
+                                    <option value="+685" data-countryCode="WS">Samoa</option>
+                                    <option value="+378" data-countryCode="SM">San Marino</option>
+                                    <option value="+239" data-countryCode="ST">São Tomé und Príncipe</option>
+                                    <option value="+966" data-countryCode="SA">Saudi-Arabien</option>
+                                    <option value="+46" data-countryCode="SE">Schweden</option>
+                                    <option value="+41" data-countryCode="CH">Schweiz</option>
+                                    <option value="+221" data-countryCode="SN">Senegal</option>
+                                    <option value="+381" data-countryCode="RS">Serbien</option>
+                                    <option value="+248" data-countryCode="SC">Seychellen</option>
+                                    <option value="+232" data-countryCode="SL">Sierra Leone</option>
+                                    <option value="+263" data-countryCode="ZW">Simbabwe</option>
+                                    <option value="+65" data-countryCode="SG">Singapur</option>
+                                    <option value="+421" data-countryCode="SK">Slowakei</option>
+                                    <option value="+386" data-countryCode="SI">Slowenien</option>
+                                    <option value="+252" data-countryCode="SO">Somalia</option>
+                                    <option value="+34" data-countryCode="ES">Spanien</option>
+                                    <option value="+94" data-countryCode="LK">Sri Lanka</option>
+                                    <option value="+290" data-countryCode="SH">St. Helena</option>
+                                    <option value="+1" data-countryCode="KN">St. Kitts und Nevis</option>
+                                    <option value="+1" data-countryCode="LC">St. Lucia</option>
+                                    <option value="+508" data-countryCode="PM">Saint-Pierre und Miquelon</option>
+                                    <option value="+1" data-countryCode="VC">St. Vincent und die Grenadinen</option>
+                                    <option value="+27" data-countryCode="ZA">Südafrika</option>
+                                    <option value="+249" data-countryCode="SD">Sudan</option>
+                                    <option value="" data-countryCode="GS">Südgeorgien und die Südlichen Sandwichinseln</option>
+                                    <option value="+597" data-countryCode="SR">Suriname</option>
+                                    <option value="" data-countryCode="SJ">Svalbard und Jan Mayen</option>
+                                    <option value="+268" data-countryCode="SZ">Swasiland</option>
+                                    <option value="+963" data-countryCode="SY">Syrien</option>
+                                    <option value="+992" data-countryCode="TJ">Tadschikistan</option>
+                                    <option value="+255" data-countryCode="TZ">Tansania</option>
+                                    <option value="+66" data-countryCode="TH">Thailand</option>
+                                    <option value="+228" data-countryCode="TG">Togo</option>
+                                    <option value="+690" data-countryCode="TK">Tokelau</option>
+                                    <option value="+676" data-countryCode="TO">Tonga</option>
+                                    <option value="+1" data-countryCode="TT">Trinidad und Tobago</option>
+                                    <option value="" data-countryCode="TA">Tristan da Cunha</option>
+                                    <option value="+235" data-countryCode="TD">Tschad</option>
+                                    <option value="+42" data-countryCode="CZ">Tschechische Republik</option>
+                                    <option value="+216" data-countryCode="TN">Tunesien</option>
+                                    <option value="+90" data-countryCode="TR">Türkei</option>
+                                    <option value="+993" data-countryCode="TM">Turkmenistan</option>
+                                    <option value="+1" data-countryCode="TC">Turks- und Caicosinseln</option>
+                                    <option value="+688" data-countryCode="TV">Tuvalu</option>
+                                    <option value="+256" data-countryCode="UG">Uganda</option>
+                                    <option value="+380" data-countryCode="UA">Ukraine</option>
+                                    <option value="+36" data-countryCode="HU">Ungarn</option>
+                                    <option value="+598" data-countryCode="UY">Uruguay</option>
+                                    <option value="+998" data-countryCode="UZ">Usbekistan</option>
+                                    <option value="+678" data-countryCode="VU">Vanuatu</option>
+                                    <option value="+39" data-countryCode="VA">Vatikanstadt</option>
+                                    <option value="+58" data-countryCode="VE">Venezuela</option>
+                                    <option value="+971" data-countryCode="AE">Vereinigte Arabische Emirate</option>
+                                    <option value="+1" data-countryCode="US">Vereinigte Staaten von Amerika (USA)</option>
+                                    <option value="+44" data-countryCode="GB">Vereinigtes Königreich Großbritannien und Nordirland</option>
+                                    <option value="+84" data-countryCode="VN">Vietnam</option>
+                                    <option value="+681" data-countryCode="WF">Wallis und Futuna</option>
+                                    <option value="+61" data-countryCode="CX">Weihnachtsinsel</option>
+                                    <option value="+212" data-countryCode="EH">Westsahara</option>
+                                    <option value="+236" data-countryCode="CF">Zentralafrikanische Republik</option>
+                                    <option value="+357" data-countryCode="CY">Zypern</option> 
+                                </select>
+                                <div class="invalid-feedback">Bitte wählen Sie ihr derzeitiges Land aus!</div>
+                            </div>
+        
+                            <div class="pb-3 px-3 ps-xl-0">
+                                <label for="postalCodeInput" class="form-label">
+                                    PLZ*
+                                </label>
+                                <input type="number" class="form-control" id="postalCodeInput" min="0" max="99999999" placeholder="4400" required onkeyup="if(parseInt(this.value)>max){ this.value = ''; return false; }">
+                                <div class="invalid-feedback">Bitte geben Sie ihre aktuelle PLZ an!</div>
+                            </div>
+        
+                            <div class="pb-3 px-3 ps-xl-0">
+                                <label for="townInput" class="form-label">
+                                    Ort*
+                                </label>
+                                <input type="text" class="form-control" id="townInput" pattern="[A-Za-zÄ-Üä-üâá-/]{1,}" placeholder="Steyr" maxlength="30" aria-describedby="townHelp" required>
+                                <div class="invalid-feedback">Bitte geben Sie ihre aktuelle Stadt an!</div>
+                            </div>
+
+                            <div class="pb-3 px-3 ps-xl-0">
+                                <label for="streetInput" class="form-label">
+                                    Straße*
+                                </label>
+                                <input type="text" class="form-control" id="streetInput" maxlength="30" placeholder="Sierninger Straße 190" aria-describedby="streetHelp" required>
+                                <div class="invalid-feedback">Bitte geben Sie ihre aktuelle Straße an!</div>
+                            </div>
+        
+                            <div class="pb-3 px-3 ps-xl-0">
+                                <label for="phoneNumber" class="form-label">
+                                    Telefonnummer*
+                                </label>
+                                <input type="tel" autocomplete="tel" placeholder="+436601234678" class="form-control" id="phoneNumber" pattern="['+0']{1}['0-9]{1,4}[ ]{0,1}['0-9']{1,12}" aria-describedby="phoneNumberHelp" required>
+                                <div class="invalid-feedback">Bitte geben Sie ihre aktuelle Telefonnummer an!</div>
+                            </div>
+
+                            <div class="pb-3 px-3 ps-xl-0">
+                                <label for="mailInput" class="form-label">
+                                    E-Mail*
+                                </label>
+                                <input type="email" class="form-control" id="mailInput" placeholder="name@provider.at" aria-describedby="mailHelp" required>
+                                <div class="invalid-feedback">Bitte geben Sie ihre aktuelle E-Mail Adresse an!</div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-1 col-sm-1 col-md-2 col-lg-2 col-xl-1 col-xxl-1 p-0"></div>
+
+                        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 col-xxl-10 mt-4 mt-xl-0 px-4 pt-3 needs-validation">
+                            <label for="mailInput" class="form-label">
+                                Bewerbungsunterlagen (Lebenslauf, Motivationsschreiben, etc.)*
+                            </label>
+                            <input id="fileUploader" name="fileUploader" type="file" class="file" accept=".pdf, .jpg, .jpeg, .img, .docx"
+                            data-show-upload="false" data-show-caption="true" data-msg-placeholder="Erlaubte Formate .pdf, .jpg, .jpeg, .img, .docx" multiple required>
+                            <div class="invalid-feedback">Bitte wählen Sie mind. eine Datei zum hochladen aus!</div>
+                            <small id="inputHelpText" class="form-text text-muted">Dateiformat: .pdf, .jpg, .jpeg, .img, .docx</small>
+                        </div>
+
+                        <div class="col-1 col-sm-1 col-md-2 col-lg-2 col-xl-1 col-xxl-1 p-0"></div>
+
+                    </div>
+
+                    
+
+                    <div class="d-flex justify-content-center my-3 pt-3">
+                        <button type="submit" value="submit" class="btn bg-primary text-white fw-bold">Bewerbung Absenden</button>
+                    </div>
+
+                </form>
+
+                <div class="col-1 col-sm-1 col-md-2 col-lg-2 col-xl-1 col-xxl-1 p-0"></div>
+
+            </div>
+    
+        </main>
+        <footer class="w-auto">
+            <div class="fs-6 bg-transparent shadow-lg p-3 text-center">
+                Die Vertraulichkeit und der Schutz Ihrer Daten haben für uns oberste Priorität. Alle Informationen dazu können Sie in der <a class="text-primary" target="_blank" href="https://www.bmd.com/siteservice/bmd-datenschutz.html">Datenschutzerklärung</a> nachlesen.
+            </div>
+        </footer>
+
+        <script src="js/ApplicationFunctionality.js"></script>
+    </body>
+</html>
+
+
+<!-- <div class="py-3 px-3 ps-xl-0">
+    <label for="applicationFileUploader" class="form-label">
+        Bewerbungsunterlagen (Motivationsschreiben, Lebenslauf, etc.)
+    </label>
+    <input type="file" class="form-control" id="applicationFileUploader" name="filePreviewUploader" accept=".pdf,.jpg,.jpeg,.docx" aria-describedby="applicationFileUploader" multiple required>
+    <small class="form-text text-muted">Erlaubte Dateiformate:<br class="d-lg-none"> .pdf, .jpg, .jpeg, .docx</small>
+    <div class="invalid-feedback">Muss mindestents eine Datei enthalten!</div>
+</div>
+
+<div class="file-loading" id="documentPreview">
+
+</div> -->
+
+<!-- <div class="pb-3 px-3 pe-xl-0">
+    <label for="jobSelect" class="form-label">
+        Verfügbare Stellen*
+    </label>
+    <select id="jobSelect" name="jobSelect" class="select-input form-control" multiple="multiple">
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mitarbeiter*in für Auftrags- und Terminkoodination (m/w/d)">Mitarbeiter*in für Auftrags- und Terminkoodination (m/w/d)</option>
+        <option value="Software Consultant für Kanzleiorganisation und Honorarverrechnung (m/w/d)">Software Consultant für Kanzleiorganisation und Honorarverrechnung (m/w/d)</option>
+        <option value="(Junior-) Consultant Finanzbuchhaltung (m/w/d)">(Junior-) Consultant Finanzbuchhaltung (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+    </select>
+</div> -->
