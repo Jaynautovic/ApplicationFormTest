@@ -6,11 +6,19 @@
         <title>BMD Systemhaus GesmbH - Online-Bewerbung</title>
 
         <link rel="icon" href="https://www.aevo.at/wp-content/uploads/2018/01/bmdlogo-02.png">
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css" rel="stylesheet">
-
-        <script src="js/bootstrap.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.css">
         
+        
+
+		<script src="./js/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		 <script src="./js/bootstrap.min.js"></script>
+		 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css" rel="stylesheet">
+		 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
+        <script src="./js/bootstrap-select-country.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
+
 
         <!-- bootstrap 5.x or 4.x is supported. You can also use the bootstrap css 3.3.x versions -->
         <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" crossorigin="anonymous">-->
@@ -60,17 +68,16 @@
         <!-- optionally if you need translation for your language then include the locale file as mentioned below (replace LANG.js with your language locale) -->
         <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/locales/LANG.js"></script>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap-multiselect.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap-multiselect.min.css" type="text/css"/>
 
-        <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
-        <link rel="stylesheet" href="css/bootstrap-multiselect.css"/>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
     </head>
 
     <body>
-        <!-- Header element with the current logo and the link to the HR E-Mail in case of troubles with the form  -->
-        <header class="w-auto">
-            <img class="img-fluid mb-2 ms-2 mt-2" src="https://www.bmd.com/fileadmin/media/logos/bmd-logo-2.png">
+        
+        <header class="w-auto pb-4">
+            <img class="img-fluid mb-3" src="https://www.bmd.com/fileadmin/media/logos/bmd-logo-2.png">
             <div class="fs-6 bg-transparent shadow p-3 text-center border-top border-5 border-primary">
                 <div class="fs-3 fw-bold text-primary">Wir freuen uns, dass Sie Teil des BMD-Teams werden wollen!</div><br>
                 Mit Ihrer Bewerbung wollen wir Sie kennenlernen und herausfinden, wie Sie mit Ihren Qualifikationen und Ihrer Persönlichkeit das BMD-Team optimal ergänzen.<br>
@@ -94,8 +101,8 @@
                                 <label for="firstNameInput" class="form-label">
                                     Vorname*
                                 </label>
-                                <input type="text" class="form-control"id="firstNameInput" pattern="[A-Za-zÄ-Üä-üâá-/]{1,}" placeholder="Max" maxlength="30" aria-describedby="firstNameHelp"required>
-                                <div class="invalid-feedback">Bitte geben Sie ihren Vornamen an!</div>
+                                <input type="text" class="form-control" id="firstNameInput" pattern="[A-Za-zÄ-Üä-üâá-/]{1,}" placeholder="Max" maxlength="30" aria-describedby="firstNameHelp" required>
+                                <div class="invalid-feedback">Ungültige Eingabe!</div>
                             </div>
         
                             <div class="pb-3 px-3 pe-xl-0">
@@ -103,7 +110,7 @@
                                     Nachname*
                                 </label>
                                 <input type="text" class="form-control" id="lastNameInput" pattern="[A-Za-zÄ-Üä-üâá-/]{1,}" placeholder="Mustermann" maxlength="25" aria-describedby="lastNameHelp" format required>
-                                <div class="invalid-feedback">Bitte geben Sie ihren Nachnamen an!</div>
+                                <div class="invalid-feedback">Ungültige Eingabe!</div>
                             </div>
 
                             <div class="pb-3 px-3 pe-xl-0">
@@ -116,56 +123,58 @@
                                     <option value="Herr">Herr</option>
                                     <option value="Selbstdefiniert">Selbstdefiniert</option>
                                 </select>
-                                <div class="invalid-feedback">Bitte wählen Sie ihre gewünschte Anrede aus!</div>
+                                <div class="invalid-feedback">Bitte eine Anrede auswählen!</div>
                             </div>
 
                             <div class="pb-3 px-3 pe-xl-0 visually-hidden" id="selfdefinedFormOfAdress">
                                 <label for="chosenAdressInput" class="form-label">
                                     Selbstdefinierte Anrede*
                                 </label>
-                                <input type="text" class="form-control" id="chosenAdressInput" placeholder="Muster Anrede" tabindex="-1" required>
+                                <input type="text" class="form-control" id="chosenAdressInput" required>
                                 <div class="invalid-feedback">Bitte wählen Sie ihre präferierte Anrede!</div>
                             </div>
 
+        
                             <div class="pb-3 px-3 pe-xl-0 form-group">
-                                <label for="birthday" class="form-label">
+                                <label for="birthDatePicker" class="form-label">
                                     Geburtsdatum*
                                 </label>
-                                <input type="date" class="form-control" id="birthday" name="birthday" placeholder="01.01.1972" required/>
-                                <div class="invalid-feedback">Bitte wählen Sie ihr Geburtsdatum aus!</div>
+                                <input type="date" class="form-control" id="birthDatepicker" name="birthDatepicker" placeholder="" required/>
+                                <div class="invalid-feedback">Ungültige Eingabe</div>
                             </div>
 
                             <div class="px-3 pe-xl-0">
                                 <label class="form-label" for="myMultiselect">Weitere Stellenangebote*</label>
                                 <div id="myMultiselect" class="multiselect">
-                                  <div id="mySelectLabel" class="selectBox" onclick="toggleCheckboxArea()">
-                                    <select class="form-select" required>
-                                      <option>somevalue</option>
-                                    </select>
-                                    <div class="overSelect:form-control"></div>
-                                  </div>
-                                  <div id="mySelectOptions" >
-                                    <label for="one"><input type="checkbox" id="one" onchange="checkboxStatusChange()" value="Mitarbeiter*in HR Management" checked /> Mitarbeiter*in HR Management</label>
-                                    <label for="two"><input type="checkbox" id="two" onchange="checkboxStatusChange()" value="Mobile App Developer" /> Mobile App Developer</label>
-                                    <label for="three"><input type="checkbox" id="three" onchange="checkboxStatusChange()" value="Mitarbeiter*in für Auftrags- und Terminkoodination" /> Mitarbeiter*in für Auftrags- und Terminkoodination</label>
-                                    <label for="four"><input type="checkbox" id="four" onchange="checkboxStatusChange()" value="Software Consultant für Kanzleiorganisation und Honorarverrechnung" /> Software Consultant für Kanzleiorganisation und Honorarverrechnung</label>
-                                    <label for="five"><input type="checkbox" id="five" onchange="checkboxStatusChange()" value="(Junior-) Counsultant Finanzbuchhaltung" /> (Junior-) Counsultant Finanzbuchhaltung</label>
-                                    <label for="six"><input type="checkbox" id="six" onchange="checkboxStatusChange()" value="Consultant Projektplanung und Leistungserfassung" /> Consultant Projektplanung und Leistungserfassung</label>
-                                    <label for="seven"><input type="checkbox" id="seven" onchange="checkboxStatusChange()" value="ERP-Software Developer" /> ERP-Software Developer</label>
-                                    <label for="eight"><input type="checkbox" id="eight" onchange="checkboxStatusChange()" value="Consultant für Zeiterfassungs-Software" /> Consultant für Zeiterfassungs-Software</label>
-                                    <label for="nine"><input type="checkbox" id="nine" onchange="checkboxStatusChange()" value="ERP Consultant für Warenwirtschaftssysteme" /> ERP Consultant für Warenwirtschaftssysteme</label>
-                                    <label for="ten"><input type="checkbox" id="ten" onchange="checkboxStatusChange()" value="ERP Consultant - Support Warenwirtschaft" /> ERP Consultant - Support Warenwirtschaft</label>
-                                    <label for="eleven"><input type="checkbox" id="eleven" onchange="checkboxStatusChange()" value="Consultant Rechnungswesen mit Schwerpunkt Bilanzbuchhaltung" /> Consultant Rechnungswesen mit Schwerpunkt Bilanzbuchhaltung</label>
-                                    <label for="twelve"><input type="checkbox" id="twelve" onchange="checkboxStatusChange()" value="Consultant Finanzbuchhaltung für Steuerberatungskanzleien" /> Consultant Finanzbuchhaltung für Steuerberatungskanzleien</label>
-                                    <label for="thirteen"><input type="checkbox" id="thirteen" onchange="checkboxStatusChange()" value="Consultant CRM mit Schwerpunkt Leistungserfassung und -abrechnung" /> Consultant CRM mit Schwerpunkt Leistungserfassung und -abrechnung</label>
-                                    <label for="fourteen"><input type="checkbox" id="fourteen" onchange="checkboxStatusChange()" value="Inhouse Consultant mit Steuerberatungserfahrung" /> Inhouse Consultant mit Steuerberatungserfahrung</label>
-                                    <label for="fifteen"><input type="checkbox" id="fifteen" onchange="checkboxStatusChange()" value="Mitarbeiter*in Verkaufsinnendienst" /> Mitarbeiter*in Verkaufsinnendienst</label>
-                                    <label for="sixteen"><input type="checkbox" id="sixteen" onchange="checkboxStatusChange()" value="Junior Softwareentwickler" /> Junior Softwareentwickler</label>
-                                    <label for="seventeen"><input type="checkbox" id="seventeen" onchange="checkboxStatusChange()" value="Junior Softwareentwickler für Warenwirtschaftssysteme" /> Junior Softwareentwickler für Warenwirtschaftssysteme</label>
-                                    <label for="eighteen"><input type="checkbox" id="eighteen" onchange="checkboxStatusChange()" value="Consultant mit Schwerpunkt Rechnungswesen" /> Consultant mit Schwerpunkt Rechnungswesen</label>
+                                    <div id="mySelectLabel" class="selectBox" onclick="toggleCheckboxArea()">
+                                        <select class="form-select" required>
+                                        <option>Mitarbeiter*in HR Management</option>
+                                        </select>
+                                        <div class="overSelect:form-control"></div>
+                                    </div>
+                                    <div id="mySelectOptions" >
+                                        <label for="one"><input type="checkbox" id="one" onchange="checkboxStatusChange()" value="Mitarbeiter*in HR Management" checked /> Mitarbeiter*in HR Management</label>
+                                        <label for="two"><input type="checkbox" id="two" onchange="checkboxStatusChange()" value="Mobile App Developer" /> Mobile App Developer</label>
+                                        <label for="three"><input type="checkbox" id="three" onchange="checkboxStatusChange()" value="Mitarbeiter*in für Auftrags- und Terminkoodination" /> Mitarbeiter*in für Auftrags- und Terminkoodination</label>
+                                        <label for="four"><input type="checkbox" id="four" onchange="checkboxStatusChange()" value="Software Consultant für Kanzleiorganisation und Honorarverrechnung" /> Software Consultant für Kanzleiorganisation und Honorarverrechnung</label>
+                                        <label for="five"><input type="checkbox" id="five" onchange="checkboxStatusChange()" value="(Junior-) Counsultant Finanzbuchhaltung" /> (Junior-) Counsultant Finanzbuchhaltung</label>
+                                        <label for="six"><input type="checkbox" id="six" onchange="checkboxStatusChange()" value="Consultant Projektplanung und Leistungserfassung" /> Consultant Projektplanung und Leistungserfassung</label>
+                                        <label for="seven"><input type="checkbox" id="seven" onchange="checkboxStatusChange()" value="ERP-Software Developer" /> ERP-Software Developer</label>
+                                        <label for="eight"><input type="checkbox" id="eight" onchange="checkboxStatusChange()" value="Consultant für Zeiterfassungs-Software" /> Consultant für Zeiterfassungs-Software</label>
+                                        <label for="nine"><input type="checkbox" id="nine" onchange="checkboxStatusChange()" value="ERP Consultant für Warenwirtschaftssysteme" /> ERP Consultant für Warenwirtschaftssysteme</label>
+                                        <label for="ten"><input type="checkbox" id="ten" onchange="checkboxStatusChange()" value="ERP Consultant - Support Warenwirtschaft" /> ERP Consultant - Support Warenwirtschaft</label>
+                                        <label for="eleven"><input type="checkbox" id="eleven" onchange="checkboxStatusChange()" value="Consultant Rechnungswesen mit Schwerpunkt Bilanzbuchhaltung" /> Consultant Rechnungswesen mit Schwerpunkt Bilanzbuchhaltung</label>
+                                        <label for="twelve"><input type="checkbox" id="twelve" onchange="checkboxStatusChange()" value="Consultant Finanzbuchhaltung für Steuerberatungskanzleien" /> Consultant Finanzbuchhaltung für Steuerberatungskanzleien</label>
+                                        <label for="thirteen"><input type="checkbox" id="thirteen" onchange="checkboxStatusChange()" value="Consultant CRM mit Schwerpunkt Leistungserfassung und -abrechnung" /> Consultant CRM mit Schwerpunkt Leistungserfassung und -abrechnung</label>
+                                        <label for="fourteen"><input type="checkbox" id="fourteen" onchange="checkboxStatusChange()" value="Inhouse Consultant mit Steuerberatungserfahrung" /> Inhouse Consultant mit Steuerberatungserfahrung</label>
+                                        <label for="fifteen"><input type="checkbox" id="fifteen" onchange="checkboxStatusChange()" value="Mitarbeiter*in Verkaufsinnendienst" /> Mitarbeiter*in Verkaufsinnendienst</label>
+                                        <label for="sixteen"><input type="checkbox" id="sixteen" onchange="checkboxStatusChange()" value="Junior Softwareentwickler" /> Junior Softwareentwickler</label>
+                                        <label for="seventeen"><input type="checkbox" id="seventeen" onchange="checkboxStatusChange()" value="Junior Softwareentwickler für Warenwirtschaftssysteme" /> Junior Softwareentwickler für Warenwirtschaftssysteme</label>
+                                        <label for="eighteen"><input type="checkbox" id="eighteen" onchange="checkboxStatusChange()" value="Consultant mit Schwerpunkt Rechnungswesen" /> Consultant mit Schwerpunkt Rechnungswesen</label>
+                                    </div>
                                 </div>
-                                </div>
-                              </div>
+                            </div>
+
                         </div>
 
                         <div class="col col-1 col-sm-2 col-md-2 col-lg-3 col-xl-2 col-xxl-2 p-0"></div>
@@ -176,7 +185,7 @@
                                 <label for="countrySelect" class="form-label">
                                     Land*
                                 </label>
-                                <select id="countrySelect" name="countrySelect" class="form-select" required>
+                                <select id="countrySelect" name="countrySelect" class="select-input form-control" required aria-describedby="help-block_custom_question_532_13 apply-description-custom_question_532_13" aria-labelledby="label_custom_question_532_13" aria-invalid="true">
                                     <option value="" selected disabled>-- Unsere Standorte --</option>
                                     <option value="+43" data-countryCode="+AT">Österreich</option>
                                     <option value="+49" data-countryCode="DE">Deutschland</option>
@@ -438,39 +447,39 @@
                                     <option value="+236" data-countryCode="CF">Zentralafrikanische Republik</option>
                                     <option value="+357" data-countryCode="CY">Zypern</option> 
                                 </select>
-                                <div class="invalid-feedback">Bitte wählen Sie ihr derzeitiges Land aus!</div>
+                                <div class="invalid-feedback">Ungültige Eingabe!</div>
                             </div>
         
                             <div class="pb-3 px-3 ps-xl-0">
                                 <label for="postalCodeInput" class="form-label">
                                     PLZ*
                                 </label>
-                                <input type="number" class="form-control" id="postalCodeInput" min="0" max="99999999" placeholder="4400" required onkeyup="if(parseInt(this.value)>max){ this.value = ''; return false; }">
-                                <div class="invalid-feedback">Bitte geben Sie ihre aktuelle PLZ an!</div>
+                                <input type="number" class="form-control" id="postalCodeInput" placeholder="4400" min="0" max="99999999" required onkeyup="if(parseInt(this.value)>max){ this.value = ''; return false; }">
+                                <div class="invalid-feedback">Ungültige Eingabe!</div>
                             </div>
         
                             <div class="pb-3 px-3 ps-xl-0">
                                 <label for="townInput" class="form-label">
                                     Ort*
                                 </label>
-                                <input type="text" class="form-control" id="townInput" pattern="[A-Za-zÄ-Üä-üâá-/]{1,}" placeholder="Steyr" maxlength="30" aria-describedby="townHelp" required>
-                                <div class="invalid-feedback">Bitte geben Sie ihre aktuelle Stadt an!</div>
+                                <input type="text" class="form-control" id="townInput" placeholder="Steyr" pattern="[A-Za-zÄ-Üä-üâá-/]{1,}" maxlength="30" aria-describedby="townHelp" required>
+                                <div class="invalid-feedback">Ungültige Eingabe!</div>
                             </div>
 
                             <div class="pb-3 px-3 ps-xl-0">
                                 <label for="streetInput" class="form-label">
                                     Straße*
                                 </label>
-                                <input type="text" class="form-control" id="streetInput" maxlength="30" placeholder="Sierninger Straße 190" aria-describedby="streetHelp" required>
-                                <div class="invalid-feedback">Bitte geben Sie ihre aktuelle Straße an!</div>
+                                <input type="text" class="form-control" id="streetInput" placeholder="Sierningerstraße 190" maxlength="30" aria-describedby="streetHelp" required>
+                                <div class="invalid-feedback">Das Feld Straße darf nicht leer sein!</div>
                             </div>
         
                             <div class="pb-3 px-3 ps-xl-0">
                                 <label for="phoneNumber" class="form-label">
                                     Telefonnummer*
                                 </label>
-                                <input type="tel" autocomplete="tel" placeholder="+436601234678" class="form-control" id="phoneNumber" pattern="['+0']{1}['0-9]{1,4}[ ]{0,1}['0-9']{1,12}" aria-describedby="phoneNumberHelp" required>
-                                <div class="invalid-feedback">Bitte geben Sie ihre aktuelle Telefonnummer an!</div>
+                                <input type="tel" class="form-control" id="phoneNumber" placeholder="+4366012345678" pattern="['+0']{1}['0-9]{1,4}[ ]{0,1}['0-9']{1,12}" aria-describedby="phoneNumberHelp" required>
+                                <div class="invalid-feedback">Ungültige Eingabe!</div>
                             </div>
 
                             <div class="pb-3 px-3 ps-xl-0">
@@ -478,29 +487,30 @@
                                     E-Mail*
                                 </label>
                                 <input type="email" class="form-control" id="mailInput" placeholder="name@provider.at" aria-describedby="mailHelp" required>
-                                <div class="invalid-feedback">Bitte geben Sie ihre aktuelle E-Mail Adresse an!</div>
+                                <div class="invalid-feedback">Ungültige Eingabe!</div>
                             </div>
 
                         </div>
 
                         <div class="col-1 col-sm-1 col-md-2 col-lg-2 col-xl-1 col-xxl-1 p-0"></div>
 
-                        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 col-xxl-10 mt-4 mt-xl-0 px-4 pt-3 needs-validation">
-                            <label for="fileUploader" class="form-label">
-                                Bewerbungsunterlagen (Lebenslauf, Motivationsschreiben, etc.)*
+                        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 col-xxl-10 mt-4 mt-xl-0 px-4 pt-5 needs-validation">
+                            <label for="mailInput" class="form-label">
+                                Bewerbungsunterlagen(Lebenslauf, Motivationsschreiben, etc.)*
                             </label>
                             <input id="fileUploader" name="fileUploader" type="file" class="file" accept=".pdf, .jpg, .jpeg, .img, .docx"
-                            data-show-upload="true" data-show-caption="true" data-msg-placeholder="Erlaubte Formate .pdf, .jpg, .jpeg, .img, .docx" multiple required>
-                            <div class="invalid-feedback">Bitte wählen Sie mind. eine Datei zum hochladen aus!</div>
-                            <small id="inputHelpText" class="form-text text-muted">Dateiformat: .pdf, .jpg, .jpeg, .img, .docx</small>
+                                   data-show-upload="true" data-show-caption="true" data-msg-placeholder="Erlaubte Formate .pdf, .jpg, .jpeg, .img, .docx" multiple required>
+                            <!-- <input class="form-control" type="file"> -->
                         </div>
 
                         <div class="col-1 col-sm-1 col-md-2 col-lg-2 col-xl-1 col-xxl-1 p-0"></div>
 
                     </div>
 
-                    <div class="d-flex justify-content-center my-3 pt-3">
-                        <button type="submit" value="submitButton" class="btn bg-primary text-white fw-bold">Bewerbung Absenden</button>
+                    
+
+                    <div class="d-flex justify-content-center my-3">
+                        <button type="submit" class="btn text-white bg-primary fw-bold">Bewerbung Absenden</button>
                     </div>
 
                 </form>
@@ -510,7 +520,6 @@
             </div>
     
         </main>
-        <!-- Footer with the link to the valid privacy statement. -->
         <footer class="w-auto">
             <div class="fs-6 bg-transparent shadow-lg p-3 text-center">
                 Die Vertraulichkeit und der Schutz Ihrer Daten haben für uns oberste Priorität. Alle Informationen dazu können Sie in der <a class="text-primary" target="_blank" href="https://www.bmd.com/siteservice/bmd-datenschutz.html">Datenschutzerklärung</a> nachlesen.
@@ -520,3 +529,42 @@
         <script src="js/ApplicationFunctionality.js"></script>
     </body>
 </html>
+
+
+<!-- <div class="py-3 px-3 ps-xl-0">
+    <label for="applicationFileUploader" class="form-label">
+        Bewerbungsunterlagen (Motivationsschreiben, Lebenslauf, etc.)
+    </label>
+    <input type="file" class="form-control" id="applicationFileUploader" name="filePreviewUploader" accept=".pdf,.jpg,.jpeg,.docx" aria-describedby="applicationFileUploader" multiple required>
+    <small class="form-text text-muted">Erlaubte Dateiformate:<br class="d-lg-none"> .pdf, .jpg, .jpeg, .docx</small>
+    <div class="invalid-feedback">Muss mindestents eine Datei enthalten!</div>
+</div>
+
+<div class="file-loading" id="documentPreview">
+
+</div> -->
+
+<!-- <div class="pb-3 px-3 pe-xl-0">
+    <label for="jobSelect" class="form-label">
+        Verfügbare Stellen*
+    </label>
+    <select id="jobSelect" name="jobSelect" class="select-input form-control" multiple="multiple">
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mitarbeiter*in für Auftrags- und Terminkoodination (m/w/d)">Mitarbeiter*in für Auftrags- und Terminkoodination (m/w/d)</option>
+        <option value="Software Consultant für Kanzleiorganisation und Honorarverrechnung (m/w/d)">Software Consultant für Kanzleiorganisation und Honorarverrechnung (m/w/d)</option>
+        <option value="(Junior-) Consultant Finanzbuchhaltung (m/w/d)">(Junior-) Consultant Finanzbuchhaltung (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
+    </select>
+</div> -->
