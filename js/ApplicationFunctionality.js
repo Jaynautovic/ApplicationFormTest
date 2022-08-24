@@ -10,9 +10,6 @@ let maxMediaSize = window.matchMedia("(max-width: 768px)");
 const inputHelpText = document.getElementById("inputHelpText");
 const cardClass = document.getElementById("cardClass");
 
-
-
-
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
     'use strict'
@@ -35,7 +32,7 @@ const cardClass = document.getElementById("cardClass");
 })();
 
 
-/* Prevents overwriting the phone number field if there are more than 5 numbers in instanceof, as well as setting the max postal code to 9999 when Austria is selected */
+/* Prevents overwriting the phone number field if there are more than 5 numbers in instance of, as well as setting the max postal code to 9999 when Austria is selected */
 currentCountry.addEventListener('input', function(){
     let value = currentCountry.options[currentCountry.selectedIndex].value;
 
@@ -60,7 +57,6 @@ formOfAdress.addEventListener("change", function (){
         selfdefinedFormOfAdress.classList.remove('visually-hidden')
         selfdefinedFormOfAdressInput.disabled = false
         selfdefinedFormOfAdressInput.required = true
-        fileUploader.classList.add("p-5")
 
     } else {
         selfdefinedFormOfAdress.classList.add('visually-hidden')
@@ -73,27 +69,26 @@ formOfAdress.addEventListener("change", function (){
 /*Adjusts the File Uploader to a Mobile or Stationary View */
 function adjustInputToMediaSize(x) {
     if (x.matches) { // If media query matches
-      fileUploader.classList.add('form-control')
-      fileUploader.classList.remove('file')
-      inputHelpText.classList.remove('visually-hidden')
-      cardClass.classList.remove('card')
+        fileUploader.classList.add('form-control')
+        fileUploader.classList.remove('file')
+        inputHelpText.classList.remove('visually-hidden')
+        console.log(cardClass.classList)
     } else {
         cardClass.classList.add('card')
-      fileUploader.classList.add('file')
-      inputHelpText.classList.add('visually-hidden')
+        fileUploader.classList.add('file')
+        inputHelpText.classList.add('visually-hidden')
     }
   }
 
-  adjustInputToMediaSize(maxMediaSize) // Call listener function at run time
-  maxMediaSize.addListener(adjustInputToMediaSize) // Attach listener function on state changes
+adjustInputToMediaSize(maxMediaSize) // Call listener function at run time
+maxMediaSize.addListener(adjustInputToMediaSize) // Attach listener function on state changes
 
+/* Adds the dropdown checkboxmenu for the available jobs */
+window.onload = (event) => {
+initMultiselect();
+};
 
-
-  window.onload = (event) => {
-    initMultiselect();
-    };
-
-    function initMultiselect() {
+function initMultiselect() {
     checkboxStatusChange();
 
     document.addEventListener("click", function(evt) {
@@ -114,69 +109,38 @@ function adjustInputToMediaSize(x) {
         // This is a click outside.
         toggleCheckboxArea(true);
         //console.log('click outside');
-    });
+});
+}
+function checkboxStatusChange() {
+var multiselect = document.getElementById("mySelectLabel");
+var multiselectOption = multiselect.getElementsByTagName('option')[0];
+
+var values = [];
+var checkboxes = document.getElementById("mySelectOptions");
+var checkedCheckboxes = checkboxes.querySelectorAll('input[type=checkbox]:checked');
+
+for (const item of checkedCheckboxes) {
+    var checkboxValue = item.getAttribute('value');
+    values.push(checkboxValue);
+}
+
+var dropdownValue = "Nothing is selected";
+if (values.length > 0) {
+    dropdownValue = values.join(', ');
+}
+
+multiselectOption.innerText = dropdownValue;
+}
+
+function toggleCheckboxArea(onlyHide = false) {
+var checkboxes = document.getElementById("mySelectOptions");
+var displayValue = checkboxes.style.display;
+
+if (displayValue != "block") {
+    if (onlyHide == false) {
+    checkboxes.style.display = "block";
     }
-
-    function checkboxStatusChange() {
-    var multiselect = document.getElementById("mySelectLabel");
-    var multiselectOption = multiselect.getElementsByTagName('option')[0];
-
-    var values = [];
-    var checkboxes = document.getElementById("mySelectOptions");
-    var checkedCheckboxes = checkboxes.querySelectorAll('input[type=checkbox]:checked');
-
-    for (const item of checkedCheckboxes) {
-        var checkboxValue = item.getAttribute('value');
-        values.push(checkboxValue);
-    }
-
-    var dropdownValue = "Nothing is selected";
-    if (values.length > 0) {
-        dropdownValue = values.join(', ');
-    }
-
-    multiselectOption.innerText = dropdownValue;
-    }
-
-    function toggleCheckboxArea(onlyHide = false) {
-    var checkboxes = document.getElementById("mySelectOptions");
-    var displayValue = checkboxes.style.display;
-
-    if (displayValue != "block") {
-        if (onlyHide == false) {
-        checkboxes.style.display = "block";
-        }
-    } else {
-        checkboxes.style.display = "none";
-    }
-    }
-
-
-
-
-/* Setting up German Language for the integrated calendar module */
-/* $.fn.datepicker.dates['de'] = {
-    days: ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
-    daysShort: ["Son", "Mon", "Die", "Mit", "Don", "Fre", "Sam"],
-    daysMin: ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"],
-    months: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
-    monthsShort: ["Jän", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"],
-    today: "Heute",
-    clear: "Löschen",
-    format: "yyyy-MM-dd",
-    weekStart: 1
-    } */
-
-/* Enable the above defined calendar with the German Language */
-/* $(document).ready(function(){
-    $("#birthDatepicker").datepicker({
-        language: "de",
-        format: "dd.mm.yyyy",
-        autoclose:true,
-        todayBtn: true,
-        clearBtn: true,
-        startDate: "01.01.1900",
-        endDate: new Date()
-    });   
-  }) */
-
+} else {
+    checkboxes.style.display = "none";
+}
+}

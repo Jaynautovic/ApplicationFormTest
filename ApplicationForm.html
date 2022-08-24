@@ -8,8 +8,6 @@
         <link rel="icon" href="https://www.aevo.at/wp-content/uploads/2018/01/bmdlogo-02.png">
 		<link rel="stylesheet" href="css/bootstrap.css">
         
-        
-
 		<script src="./js/jquery.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		 <script src="./js/bootstrap.min.js"></script>
@@ -70,12 +68,10 @@
 
         <script type="text/javascript" src="js/bootstrap-multiselect.min.js"></script>
         <link rel="stylesheet" href="css/bootstrap-multiselect.min.css" type="text/css"/>
-
-
     </head>
 
     <body>
-        
+        <!-- Header element with the current logo and the link to the HR E-Mail in case of troubles with the form  -->
         <header class="w-auto pb-4">
             <img class="img-fluid mb-3" src="https://www.bmd.com/fileadmin/media/logos/bmd-logo-2.png">
             <div class="fs-6 bg-transparent shadow p-3 text-center border-top border-5 border-primary">
@@ -101,16 +97,16 @@
                                 <label for="firstNameInput" class="form-label">
                                     Vorname*
                                 </label>
-                                <input type="text" class="form-control" id="firstNameInput" pattern="[A-Za-zÄ-Üä-üâá-/]{1,}" placeholder="Max" maxlength="30" aria-describedby="firstNameHelp" required>
-                                <div class="invalid-feedback">Ungültige Eingabe!</div>
+                                <input type="text" class="form-control" id="firstNameInput" pattern="[A-Za-zÄ-Üä-üâá-/]{1,}" placeholder="Vorname" maxlength="30" aria-describedby="firstNameHelp" required>
+                                <div class="invalid-feedback">Bitte geben Sie Ihren Vornamen an!</div>
                             </div>
         
                             <div class="pb-3 px-3 pe-xl-0">
                                 <label for="lastNameInput" class="form-label">
                                     Nachname*
                                 </label>
-                                <input type="text" class="form-control" id="lastNameInput" pattern="[A-Za-zÄ-Üä-üâá-/]{1,}" placeholder="Mustermann" maxlength="25" aria-describedby="lastNameHelp" format required>
-                                <div class="invalid-feedback">Ungültige Eingabe!</div>
+                                <input type="text" class="form-control" id="lastNameInput" pattern="[A-Za-zÄ-Üä-üâá-/]{1,}" placeholder="Nachname" maxlength="25" aria-describedby="lastNameHelp" format required>
+                                <div class="invalid-feedback">Bitte geben Sie Ihren Nachnamen an!</div>
                             </div>
 
                             <div class="pb-3 px-3 pe-xl-0">
@@ -123,7 +119,7 @@
                                     <option value="Herr">Herr</option>
                                     <option value="Selbstdefiniert">Selbstdefiniert</option>
                                 </select>
-                                <div class="invalid-feedback">Bitte eine Anrede auswählen!</div>
+                                <div class="invalid-feedback">Bitte wählen Sie Ihre gewünschte Anrede aus!</div>
                             </div>
 
                             <div class="pb-3 px-3 pe-xl-0 visually-hidden" id="selfdefinedFormOfAdress">
@@ -131,7 +127,7 @@
                                     Selbstdefinierte Anrede*
                                 </label>
                                 <input type="text" class="form-control" id="chosenAdressInput" required>
-                                <div class="invalid-feedback">Bitte wählen Sie ihre präferierte Anrede!</div>
+                                <div class="invalid-feedback">Bitte wählen Sie Ihre präferierte Anrede!</div>
                             </div>
 
         
@@ -139,8 +135,8 @@
                                 <label for="birthDatePicker" class="form-label">
                                     Geburtsdatum*
                                 </label>
-                                <input type="date" class="form-control" id="birthDatepicker" name="birthDatepicker" placeholder="" required/>
-                                <div class="invalid-feedback">Ungültige Eingabe</div>
+                                <input type="date" class="form-control" id="birthDatepicker" name="birthDatepicker" required/>
+                                <div class="invalid-feedback">Bitte wählen Sie Ihr Geburtsdatum aus!</div>
                             </div>
 
                             <div class="px-3 pe-xl-0">
@@ -447,67 +443,65 @@
                                     <option value="+236" data-countryCode="CF">Zentralafrikanische Republik</option>
                                     <option value="+357" data-countryCode="CY">Zypern</option> 
                                 </select>
-                                <div class="invalid-feedback">Ungültige Eingabe!</div>
+                                <div class="invalid-feedback">Bitte wählen Sie Ihr derzeitiges Land aus!</div>
                             </div>
         
                             <div class="pb-3 px-3 ps-xl-0">
                                 <label for="postalCodeInput" class="form-label">
                                     PLZ*
                                 </label>
-                                <input type="number" class="form-control" id="postalCodeInput" placeholder="4400" min="0" max="99999999" required onkeyup="if(parseInt(this.value)>max){ this.value = ''; return false; }">
-                                <div class="invalid-feedback">Ungültige Eingabe!</div>
+                                <input type="number" class="form-control" id="postalCodeInput" placeholder="PLZ" min="0" max="99999999" required onkeyup="if(parseInt(this.value)>max){ this.value = ''; return false; }">
+                                <div class="invalid-feedback">Bitte geben Sie Ihre aktuelle PLZ an!</div>
                             </div>
         
                             <div class="pb-3 px-3 ps-xl-0">
                                 <label for="townInput" class="form-label">
                                     Ort*
                                 </label>
-                                <input type="text" class="form-control" id="townInput" placeholder="Steyr" pattern="[A-Za-zÄ-Üä-üâá-/]{1,}" maxlength="30" aria-describedby="townHelp" required>
-                                <div class="invalid-feedback">Ungültige Eingabe!</div>
+                                <input type="text" class="form-control" id="townInput" placeholder="Stadt" pattern="[A-Za-zÄ-Üä-üâá-/]{1,}" maxlength="30" aria-describedby="townHelp" required>
+                                <div class="invalid-feedback">Bitte geben Sie Ihre aktuelle Stadt an!</div>
                             </div>
 
                             <div class="pb-3 px-3 ps-xl-0">
                                 <label for="streetInput" class="form-label">
                                     Straße*
                                 </label>
-                                <input type="text" class="form-control" id="streetInput" placeholder="Sierningerstraße 190" maxlength="30" aria-describedby="streetHelp" required>
-                                <div class="invalid-feedback">Das Feld Straße darf nicht leer sein!</div>
+                                <input type="text" class="form-control" id="streetInput" placeholder="Straße" maxlength="30" aria-describedby="streetHelp" required>
+                                <div class="invalid-feedback">Bitte geben Sie Ihre aktuelle Straße an!</div>
                             </div>
         
                             <div class="pb-3 px-3 ps-xl-0">
                                 <label for="phoneNumber" class="form-label">
                                     Telefonnummer*
                                 </label>
-                                <input type="tel" class="form-control" id="phoneNumber" placeholder="+4366012345678" pattern="['+0']{1}['0-9]{1,4}[ ]{0,1}['0-9']{1,12}" aria-describedby="phoneNumberHelp" required>
-                                <div class="invalid-feedback">Ungültige Eingabe!</div>
+                                <input type="tel" class="form-control" id="phoneNumber" placeholder="Telefonnummer" pattern="['+0']{1}['0-9]{1,4}[ ]{0,1}['0-9']{1,12}" aria-describedby="phoneNumberHelp" required>
+                                <div class="invalid-feedback">Bitte geben Sie Ihre aktuelle Telefonnummer an!</div>
                             </div>
 
                             <div class="pb-3 px-3 ps-xl-0">
                                 <label for="mailInput" class="form-label">
                                     E-Mail*
                                 </label>
-                                <input type="email" class="form-control" id="mailInput" placeholder="name@provider.at" aria-describedby="mailHelp" required>
-                                <div class="invalid-feedback">Ungültige Eingabe!</div>
+                                <input type="email" class="form-control" id="mailInput" placeholder="E-Mail" aria-describedby="mailHelp" required>
+                                <div class="invalid-feedback">Bitte geben Sie Ihre aktuelle E-Mail Adresse an!</div>
                             </div>
 
                         </div>
 
                         <div class="col-1 col-sm-1 col-md-2 col-lg-2 col-xl-1 col-xxl-1 p-0"></div>
 
-                        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 col-xxl-10 mt-4 mt-xl-0 px-4 pt-5 needs-validation">
+                        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 col-xxl-10 mt-4 mt-xl-0 px-4 pb-3  needs-validation">
                             <label for="mailInput" class="form-label">
-                                Bewerbungsunterlagen(Lebenslauf, Motivationsschreiben, etc.)*
+                                Bewerbungsunterlagen (Lebenslauf, Motivationsschreiben, etc.)*
                             </label>
                             <input id="fileUploader" name="fileUploader" type="file" class="file" accept=".pdf, .jpg, .jpeg, .img, .docx"
-                                   data-show-upload="true" data-show-caption="true" data-msg-placeholder="Erlaubte Formate .pdf, .jpg, .jpeg, .img, .docx" multiple required>
-                            <!-- <input class="form-control" type="file"> -->
+                                data-show-upload="false" data-show-caption="true" data-msg-placeholder="Erlaubte Formate .pdf, .jpg, .jpeg, .img, .docx" multiple required>
+                                <div class="invalid-feedback">Bitte wählen Sie mind. eine Datei zum hochladen aus!</div>
                         </div>
 
                         <div class="col-1 col-sm-1 col-md-2 col-lg-2 col-xl-1 col-xxl-1 p-0"></div>
 
                     </div>
-
-                    
 
                     <div class="d-flex justify-content-center my-3">
                         <button type="submit" class="btn text-white bg-primary fw-bold">Bewerbung Absenden</button>
@@ -529,42 +523,3 @@
         <script src="js/ApplicationFunctionality.js"></script>
     </body>
 </html>
-
-
-<!-- <div class="py-3 px-3 ps-xl-0">
-    <label for="applicationFileUploader" class="form-label">
-        Bewerbungsunterlagen (Motivationsschreiben, Lebenslauf, etc.)
-    </label>
-    <input type="file" class="form-control" id="applicationFileUploader" name="filePreviewUploader" accept=".pdf,.jpg,.jpeg,.docx" aria-describedby="applicationFileUploader" multiple required>
-    <small class="form-text text-muted">Erlaubte Dateiformate:<br class="d-lg-none"> .pdf, .jpg, .jpeg, .docx</small>
-    <div class="invalid-feedback">Muss mindestents eine Datei enthalten!</div>
-</div>
-
-<div class="file-loading" id="documentPreview">
-
-</div> -->
-
-<!-- <div class="pb-3 px-3 pe-xl-0">
-    <label for="jobSelect" class="form-label">
-        Verfügbare Stellen*
-    </label>
-    <select id="jobSelect" name="jobSelect" class="select-input form-control" multiple="multiple">
-        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
-        <option value="Mitarbeiter*in für Auftrags- und Terminkoodination (m/w/d)">Mitarbeiter*in für Auftrags- und Terminkoodination (m/w/d)</option>
-        <option value="Software Consultant für Kanzleiorganisation und Honorarverrechnung (m/w/d)">Software Consultant für Kanzleiorganisation und Honorarverrechnung (m/w/d)</option>
-        <option value="(Junior-) Consultant Finanzbuchhaltung (m/w/d)">(Junior-) Consultant Finanzbuchhaltung (m/w/d)</option>
-        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
-        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
-        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
-        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
-        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
-        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
-        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
-        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
-        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
-        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
-        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
-        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
-        <option value="Mobile App Developer">Mobile App Developer (m/w/d)</option>
-    </select>
-</div> -->
